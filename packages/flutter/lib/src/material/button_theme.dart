@@ -48,10 +48,9 @@ enum ButtonBarLayoutBehavior {
 /// This class is planned to be deprecated in a future release.
 /// Please use one or more of these buttons and associated themes instead:
 ///
-///  * [ElevatedButton], [ElevatedButtonTheme], [ElevatedButtonThemeData],
-///  * [FilledButton], [FilledButtonTheme], [FilledButtonThemeData],
-///  * [OutlinedButton], [OutlinedButtonTheme], [OutlinedButtonThemeData]
 ///  * [TextButton], [TextButtonTheme], [TextButtonThemeData],
+///  * [ElevatedButton], [ElevatedButtonTheme], [ElevatedButtonThemeData],
+///  * [OutlinedButton], [OutlinedButtonTheme], [OutlinedButtonThemeData]
 ///
 /// A button theme can be specified as part of the overall Material theme
 /// using [ThemeData.buttonTheme]. The Material theme's button theme data

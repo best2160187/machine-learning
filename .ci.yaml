@@ -286,6 +286,7 @@ targets:
         ["framework", "hostonly", "shard", "linux"]
     runIf:
       - .ci.yaml
+    bringup: true
 
   - name: Linux customer_testing
     enabled_branches:

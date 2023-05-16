@@ -451,7 +451,7 @@ class IOSDevice extends Device {
         _logger.printError('');
         return LaunchResult.failed();
       }
-      packageId = buildResult.xcodeBuildExecution?.buildSettings['PRODUCT_BUNDLE_IDENTIFIER'];
+      packageId = buildResult.xcodeBuildExecution?.buildSettings[IosProject.kProductBundleIdKey];
     }
 
     packageId ??= package.id;
@@ -546,6 +546,7 @@ class IOSDevice extends Device {
             "If you don't see your app in the Settings, uninstall the app and rerun to see the prompt again."
           );
         } else {
+          iosDeployDebugger?.checkForSymbolsFiles(_fileSystem);
           iosDeployDebugger?.pauseDumpBacktraceResume();
         }
       });

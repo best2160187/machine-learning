@@ -42,11 +42,8 @@ const Duration _kNavBarTitleFadeDuration = Duration(milliseconds: 150);
 
 const Color _kDefaultNavBarBorderColor = Color(0x4D000000);
 
-const Border _kDefaultNavBarBorder = Border(
-  bottom: BorderSide(
-    color: _kDefaultNavBarBorderColor,
-    width: 0.0, // 0.0 means one physical pixel
-  ),
+const HairlineBorder _kDefaultNavBarBorder = HairlineBorder(
+  bottomColor: _kDefaultNavBarBorderColor,
 );
 
 // There's a single tag for all instances of navigation bars because they can
@@ -130,7 +127,7 @@ class _FixedSizeSlidingTransition extends AnimatedWidget {
 /// When `updateSystemUiOverlay` is true, the nav bar will update the OS
 /// status bar's color theme based on the background color of the nav bar.
 Widget _wrapWithBackground({
-  Border? border,
+  BoxBorder? border,
   required Color backgroundColor,
   Brightness? brightness,
   required Widget child,
@@ -381,7 +378,7 @@ class CupertinoNavigationBar extends StatefulWidget implements ObstructingPrefer
   ///
   /// If a border is null, the navigation bar will not display a border.
   /// {@endtemplate}
-  final Border? border;
+  final BoxBorder? border;
 
   /// {@template flutter.cupertino.CupertinoNavigationBar.transitionBetweenRoutes}
   /// Whether to transition between navigation bars.
@@ -686,7 +683,7 @@ class CupertinoSliverNavigationBar extends StatefulWidget {
   final EdgeInsetsDirectional? padding;
 
   /// {@macro flutter.cupertino.CupertinoNavigationBar.border}
-  final Border? border;
+  final BoxBorder? border;
 
   /// {@macro flutter.cupertino.CupertinoNavigationBar.transitionBetweenRoutes}
   final bool transitionBetweenRoutes;
@@ -788,7 +785,7 @@ class _LargeTitleNavigationBarSliverDelegate
   final Widget? userMiddle;
   final Color backgroundColor;
   final Brightness? brightness;
-  final Border? border;
+  final BoxBorder? border;
   final EdgeInsetsDirectional? padding;
   final Color actionsForegroundColor;
   final bool transitionBetweenRoutes;
@@ -1631,7 +1628,7 @@ class _TransitionableNavigationBar extends StatelessWidget {
   final TextStyle backButtonTextStyle;
   final TextStyle titleTextStyle;
   final TextStyle? largeTitleTextStyle;
-  final Border? border;
+  final BoxBorder? border;
   final bool hasUserMiddle;
   final bool largeExpanded;
   final Widget child;
@@ -1705,7 +1702,7 @@ class _NavigationBarTransition extends StatelessWidget {
          begin: bottomNavBar.backgroundColor,
          end: topNavBar.backgroundColor,
        ),
-       borderTween = BorderTween(
+       borderTween = BoxBorderTween(
          begin: bottomNavBar.border,
          end: topNavBar.border,
        );
@@ -1716,7 +1713,7 @@ class _NavigationBarTransition extends StatelessWidget {
 
   final Tween<double> heightTween;
   final ColorTween backgroundTween;
-  final BorderTween borderTween;
+  final BoxBorderTween borderTween;
 
   @override
   Widget build(BuildContext context) {

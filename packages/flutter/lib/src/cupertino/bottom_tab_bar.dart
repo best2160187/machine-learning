@@ -68,11 +68,8 @@ class CupertinoTabBar extends StatelessWidget implements PreferredSizeWidget {
     this.inactiveColor = _kDefaultTabBarInactiveColor,
     this.iconSize = 30.0,
     this.height = _kTabBarHeight,
-    this.border = const Border(
-      top: BorderSide(
-        color: _kDefaultTabBarBorderColor,
-        width: 0.0, // 0.0 means one physical pixel
-      ),
+    this.border = const HairlineBorder(
+      topColor: _kDefaultTabBarBorderColor,
     ),
   }) : assert(
          items.length >= 2,
@@ -136,7 +133,7 @@ class CupertinoTabBar extends StatelessWidget implements PreferredSizeWidget {
   /// The border of the [CupertinoTabBar].
   ///
   /// The default value is a one physical pixel top border with grey color.
-  final Border? border;
+  final BoxBorder? border;
 
   @override
   Size get preferredSize => Size.fromHeight(height);
@@ -165,15 +162,25 @@ class CupertinoTabBar extends StatelessWidget implements PreferredSizeWidget {
         : side.copyWith(color: CupertinoDynamicColor.resolve(side.color, context));
     }
 
+    Color? resolveColor(Color? color) =>
+        color == null ? null : CupertinoDynamicColor.resolve(color, context);
+
     // Return the border as is when it's a subclass.
-    final Border? resolvedBorder = border == null || border.runtimeType != Border
-      ? border
-      : Border(
-        top: resolveBorderSide(border!.top),
-        left: resolveBorderSide(border!.left),
-        bottom: resolveBorderSide(border!.bottom),
-        right: resolveBorderSide(border!.right),
-      );
+    final BoxBorder? resolvedBorder = switch (border) {
+      final Border trueBorder => Border(
+        top: resolveBorderSide(trueBorder.top),
+        left: resolveBorderSide(trueBorder.left),
+        bottom: resolveBorderSide(trueBorder.bottom),
+        right: resolveBorderSide(trueBorder.right),
+      ),
+      final HairlineBorder hairlineBorder => HairlineBorder(
+        topColor: resolveColor(hairlineBorder.topColor),
+        leftColor: resolveColor(hairlineBorder.leftColor),
+        bottomColor: resolveColor(hairlineBorder.bottomColor),
+        rightColor: resolveColor(hairlineBorder.rightColor),
+      ),
+      _ => border,
+    };
 
     final Color inactive = CupertinoDynamicColor.resolve(inactiveColor, context);
     Widget result = DecoratedBox(

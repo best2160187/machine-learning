@@ -2029,7 +2029,7 @@ void main() {
       border: Border(bottom: BorderSide(color: Color(0xFFCCBB00), width: 4.0)),
     );
     const BoxDecoration defaultDecoration = BoxDecoration(
-      border: Border(bottom: BorderSide(color: Color(0xFFBDBDBD), width: 0.0)),
+      border: HairlineBorder(bottomColor: Color(0xFFBDBDBD)),
     );
 
     final Widget customUnderline = Container(height: 4.0, decoration: decoration);

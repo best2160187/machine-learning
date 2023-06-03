@@ -1514,11 +1514,8 @@ class _DropdownButtonState<T> extends State<DropdownButton<T>> with WidgetsBindi
             child: widget.underline ?? Container(
               height: 1.0,
               decoration: const BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(
-                    color: Color(0xFFBDBDBD),
-                    width: 0.0,
-                  ),
+                border: HairlineBorder(
+                  bottomColor: Color(0xFFBDBDBD),
                 ),
               ),
             ),

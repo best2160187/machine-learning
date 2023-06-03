@@ -72,7 +72,7 @@ class _CupertinoTextFieldDemoState extends State<CupertinoTextFieldDemo> {
       textCapitalization: TextCapitalization.words,
       autocorrect: false,
       decoration: BoxDecoration(
-        border: Border(bottom: BorderSide(width: 0.0, color: CupertinoColors.inactiveGray)),
+        border: HairlineBorder(bottomColor: CupertinoColors.inactiveGray),
       ),
       placeholder: 'Name',
     );
@@ -90,7 +90,7 @@ class _CupertinoTextFieldDemoState extends State<CupertinoTextFieldDemo> {
       keyboardType: TextInputType.emailAddress,
       autocorrect: false,
       decoration: BoxDecoration(
-        border: Border(bottom: BorderSide(width: 0.0, color: CupertinoColors.inactiveGray)),
+        border: HairlineBorder(bottomColor: CupertinoColors.inactiveGray),
       ),
       placeholder: 'Email',
     );
@@ -108,7 +108,7 @@ class _CupertinoTextFieldDemoState extends State<CupertinoTextFieldDemo> {
       clearButtonMode: OverlayVisibilityMode.editing,
       textCapitalization: TextCapitalization.words,
       decoration: const BoxDecoration(
-        border: Border(bottom: BorderSide(width: 0.0, color: CupertinoColors.inactiveGray)),
+        border: HairlineBorder(bottomColor: CupertinoColors.inactiveGray),
       ),
       placeholder: 'Location',
     );
@@ -127,7 +127,7 @@ class _CupertinoTextFieldDemoState extends State<CupertinoTextFieldDemo> {
       autocorrect: false,
       obscureText: true,
       decoration: BoxDecoration(
-        border: Border(bottom: BorderSide(width: 0.0, color: CupertinoColors.inactiveGray)),
+        border: HairlineBorder(bottomColor: CupertinoColors.inactiveGray),
       ),
       placeholder: 'Create a PIN',
     );
@@ -144,7 +144,7 @@ class _CupertinoTextFieldDemoState extends State<CupertinoTextFieldDemo> {
       enabled: false,
       padding: const EdgeInsets.symmetric(horizontal: 6.0, vertical: 12.0),
       decoration: const BoxDecoration(
-        border: Border(bottom: BorderSide(width: 0.0, color: CupertinoColors.inactiveGray)),
+        border: HairlineBorder(bottomColor: CupertinoColors.inactiveGray),
       ),
     );
   }

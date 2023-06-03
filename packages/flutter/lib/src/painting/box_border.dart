@@ -246,12 +246,13 @@ abstract class BoxBorder extends ShapeBorder {
     Canvas canvas,
     Rect rect, {
     required BorderRadius? borderRadius,
-    required BoxShape shape,
     required TextDirection? textDirection,
     required BorderSide left,
     required BorderSide top,
     required BorderSide right,
     required BorderSide bottom,
+    BoxShape shape = BoxShape.rectangle,
+    PaintingStyle paintStyle = PaintingStyle.fill,
   }) {
     final RRect borderRect;
     switch (shape) {
@@ -267,6 +268,10 @@ abstract class BoxBorder extends ShapeBorder {
         );
     }
     final Paint paint = Paint()..color = top.color;
+    if (paintStyle == PaintingStyle.stroke) {
+      paint.style = paintStyle;
+    }
+
     final RRect inner = _deflateRRect(borderRect, EdgeInsets.fromLTRB(left.strokeInset, top.strokeInset, right.strokeInset, bottom.strokeInset));
     final RRect outer = _inflateRRect(borderRect, EdgeInsets.fromLTRB(left.strokeOutset, top.strokeOutset, right.strokeOutset, bottom.strokeOutset));
     canvas.drawDRRect(outer, inner, paint);
@@ -294,7 +299,7 @@ abstract class BoxBorder extends ShapeBorder {
       topLeft: (rect.tlRadius - Radius.elliptical(insets.left, insets.top)).clamp(minimum: Radius.zero), // ignore_clamp_double_lint
       topRight: (rect.trRadius - Radius.elliptical(insets.right, insets.top)).clamp(minimum: Radius.zero), // ignore_clamp_double_lint
       bottomRight: (rect.brRadius - Radius.elliptical(insets.right, insets.bottom)).clamp(minimum: Radius.zero), // ignore_clamp_double_lint
-      bottomLeft:(rect.blRadius - Radius.elliptical(insets.left, insets.bottom)).clamp(minimum: Radius.zero), // ignore_clamp_double_lint
+      bottomLeft: (rect.blRadius - Radius.elliptical(insets.left, insets.bottom)).clamp(minimum: Radius.zero), // ignore_clamp_double_lint
     );
   }
 

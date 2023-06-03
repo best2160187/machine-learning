@@ -180,8 +180,8 @@ class _ListItem extends StatelessWidget {
         Expanded(
           child: Container(
               decoration: const BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(color: Color(0xFFBCBBC1), width: 0.0),
+                border: HairlineBorder(
+                  bottomColor: Color(0xFFBCBBC1),
                 ),
               ),
               padding: const EdgeInsets.only(left: 1.0, bottom: 9.0, right: 10.0),

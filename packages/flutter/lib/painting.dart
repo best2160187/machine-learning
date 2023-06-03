@@ -41,6 +41,7 @@ export 'src/painting/flutter_logo.dart';
 export 'src/painting/fractional_offset.dart';
 export 'src/painting/geometry.dart';
 export 'src/painting/gradient.dart';
+export 'src/painting/hairline_border.dart';
 export 'src/painting/image_cache.dart';
 export 'src/painting/image_decoder.dart';
 export 'src/painting/image_provider.dart';

@@ -27,18 +27,15 @@ const TextStyle _kDefaultPlaceholderStyle = TextStyle(
 );
 
 // Value inspected from Xcode 11 & iOS 13.0 Simulator.
-const BorderSide _kDefaultRoundedBorderSide = BorderSide(
-  color: CupertinoDynamicColor.withBrightness(
-    color: Color(0x33000000),
-    darkColor: Color(0x33FFFFFF),
-  ),
-  width: 0.0,
+const Color _kDefaultRoundedColor = CupertinoDynamicColor.withBrightness(
+  color: Color(0x33000000),
+  darkColor: Color(0x33FFFFFF),
 );
-const Border _kDefaultRoundedBorder = Border(
-  top: _kDefaultRoundedBorderSide,
-  bottom: _kDefaultRoundedBorderSide,
-  left: _kDefaultRoundedBorderSide,
-  right: _kDefaultRoundedBorderSide,
+const HairlineBorder _kDefaultRoundedBorder = HairlineBorder(
+  topColor: _kDefaultRoundedColor,
+  bottomColor: _kDefaultRoundedColor,
+  leftColor: _kDefaultRoundedColor,
+  rightColor: _kDefaultRoundedColor,
 );
 
 const BoxDecoration _kDefaultRoundedBorderDecoration = BoxDecoration(

@@ -563,7 +563,7 @@ class _UnderlinesState extends State<Underlines> {
       alignment: Alignment.centerLeft,
       heightFactor: 1.0,
       child: Container(
-        decoration: const BoxDecoration(color: Color(0xFF333333), border: Border(right: BorderSide(color: Colors.white, width: 0.0))),
+        decoration: const BoxDecoration(color: Color(0xFF333333), border: HairlineBorder(rightColor: Colors.white)),
         child: Text(_text, style: style != null ? _style.copyWith(decoration: TextDecoration.underline, decorationStyle: style) : _style),
       ),
     );

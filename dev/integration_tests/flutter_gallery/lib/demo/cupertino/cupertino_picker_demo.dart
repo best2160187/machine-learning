@@ -63,9 +63,9 @@ class _Menu extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: CupertinoTheme.of(context).scaffoldBackgroundColor,
-        border: const Border(
-          top: BorderSide(color: Color(0xFFBCBBC1), width: 0.0),
-          bottom: BorderSide(color: Color(0xFFBCBBC1), width: 0.0),
+        border: const HairlineBorder(
+          topColor: Color(0xFFBCBBC1),
+          bottomColor: Color(0xFFBCBBC1),
         ),
       ),
       height: 44.0,

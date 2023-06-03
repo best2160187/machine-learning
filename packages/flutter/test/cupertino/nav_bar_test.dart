@@ -778,12 +778,7 @@ void main() {
       const CupertinoApp(
         home: CupertinoNavigationBar(
           middle: Text('Title'),
-          border: Border(
-            bottom: BorderSide(
-              color: Color(0xFFAABBCC),
-              width: 0.0,
-            ),
-          ),
+          border: HairlineBorder(bottomColor: Color(0xFFAABBCC)),
         ),
       ),
     );
@@ -930,11 +925,8 @@ void main() {
             slivers: <Widget>[
               CupertinoSliverNavigationBar(
                 largeTitle: Text('Large Title'),
-                border: Border(
-                  bottom: BorderSide(
-                    color: Color(0xFFAABBCC),
-                    width: 0.0,
-                  ),
+                border: HairlineBorder(
+                  bottomColor: Color(0xFFAABBCC),
                 ),
               ),
             ],
